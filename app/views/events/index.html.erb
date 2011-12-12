@@ -1,27 +1,31 @@
-<h1>Listing events</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Purpose</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="page-header">
+	<h1>Listing events</h1>	
+</div>
 
 <% @events.each do |event| %>
-  <tr>
-    <td><%= event.name %></td>
-    <td><%= event.purpose %></td>
-    <td><%= event.description %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<div class="row">
+	
+	<div class="span6">
+		<ul class="media-grid">
+	        <li>
+	          <a href="#">
+	            <img class="thumbnail" src="http://placehold.it/330x230" alt="">
+	          </a>
+	        </li>
+		</ul>
+	</div>
+	
+	<div class="span10">
+		
+		<h2><%= event.name %></h2>
+		<p><%= event.purpose %></p>
+		<p><%= event.description %></p>
+		<%= link_to 'Show', event %>
+		<%= link_to 'Edit', edit_event_path(event) %>
+		<%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %>
+	</div>
+	
+</div>
 <% end %>
-</table>
-
-<br />
 
 <%= link_to 'New Event', new_event_path %>
