@@ -8,16 +8,14 @@
 	<div class="span6">
 		<ul class="media-grid">
 	        <li>
-	          <a href="#">
-	            <img class="thumbnail" src="http://placehold.it/330x230" alt="">
-	          </a>
+	          <%= link_to (image_tag event.photo.url(:large), :class => "thumbnail"), event.photo.url %>
 	        </li>
 		</ul>
 	</div>
 	
 	<div class="span10">
 		
-		<h2><%= event.name %></h2>
+		<h2><%= link_to event.name, event %></h2>
 		<p><%= event.purpose %></p>
 		<p><%= event.description %></p>
 		<%= link_to 'Show', event %>
